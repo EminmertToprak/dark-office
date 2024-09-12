@@ -25,3 +25,15 @@ body {
     text-wrap: balance;
   }
 }
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('/fonts/my-font.woff2') format('woff2'),
+       url('/fonts/my-font.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'GeistMonoVF', 'GeistVF';
+}
