@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 interface HeaderProps {
 	title: string;
 	subtitle: string;
-	backgroundImage: any;
+	backgroundImage: string;
 	backgroundVideo?: string;
 }
 
