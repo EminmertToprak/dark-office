@@ -18,7 +18,7 @@ export default function Navbar() {
 			<div className="w-full flex flex-wrap items-center justify-between mx-auto p-4">
 				<a href="/home" className="flex items-end rtl:space-x-reverse">
 					<h1 className="text-4xl font-bold text-theme_dark_red">dark offic</h1>
-					<Image src={logo} className="h-6 w-auto mb-1.5" alt="Dark Office Logo" />
+					<Image src={logo || ''} className="h-6 w-auto mb-1.5" alt="Dark Office Logo" />
 				</a>
 				<button
 					className="block md:hidden text-white focus:outline-none"
@@ -34,8 +34,8 @@ export default function Navbar() {
 				<ul className={`fixed top-0 right-0 h-full bg-[#252525] w-64 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:static md:flex md:flex-row md:gap-8 md:bg-transparent md:w-auto md:transform-none flex flex-col items-center justify-center z-20`}>
 					<li className="mb-8">
 						<a href="/home" className="flex items-end rtl:space-x-reverse">
-							<h1 className="text-4xl font-bold text-theme_dark_red">dark offic</h1>
-							<Image src={logo} className="h-6 w-auto mb-1.5" alt="Dark Office Logo" />
+							<h1 className="text-4xl font-bold text-theme_dark_red lg:hidden">dark offic</h1>
+							<Image src={logo || ''} className="h-6 w-auto mb-1.5 lg:hidden" alt="Dark Office Logo" />
 						</a>
 					</li>
 					<li className={buttonstyle}>

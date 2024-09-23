@@ -46,8 +46,8 @@ export default function Header({
 				</video>
 			) : (
 				<Image
-					src={backgroundImage as string}
-					alt={alt as string}
+					src={backgroundImage || ''}
+					alt={alt || ''}
 					className="object-cover"
 					priority
 					width={1920}

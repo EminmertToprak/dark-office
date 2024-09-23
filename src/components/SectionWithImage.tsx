@@ -17,7 +17,7 @@ const SectionWithImage: React.FC<SectionWithImageProps> = ({ title, description,
 				<p className='text-center sm:text-left text-gray-300'>{description}</p>
 			</div>
 			<div id='section-image' className='w-full max-w-2xl mx-auto h-full'>
-				<Image src={src} alt={imageAlt} width={500} height={500} className='w-full h-auto'/>
+				<Image src={src || ''} alt={imageAlt || ''} width={500} height={500} className='w-full h-auto'/>
 			</div>
 		</section>
 	);
