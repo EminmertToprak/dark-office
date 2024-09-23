@@ -11,6 +11,7 @@ interface HeaderProps {
 	subtitle: string;
 	backgroundImage?: string;
 	backgroundVideo?: string;
+	alt?: string;
 	buttons?: Button[];
 }
 
@@ -20,6 +21,7 @@ export default function Header({
 	backgroundImage,
 	backgroundVideo,
 	buttons,
+	alt,
 }: HeaderProps) {
 	const [isVideo, setIsVideo] = useState(false);
 
@@ -45,19 +47,20 @@ export default function Header({
 			) : (
 				<Image
 					src={backgroundImage as string}
-					alt="Header background"
-					layout="fill"
+					alt={alt as string}
 					className="object-cover"
 					priority
+					width={1920}
+					height={1080}
 				/>
 			)}
 
-			<div className="flex flex-col gap-4 items-start justify-center relative z-10 text-white p-8">
-				<h1 className="text-4xl font-bold">{title}</h1>
-				<p className="text-xl mt-4">{subtitle}</p>
-				<div className="flex gap-4 mt-4">
+			<div className="flex flex-col gap-4 items-start justify-center relative z-10 text-white p-4 sm:p-8">
+				<h1 className="text-2xl sm:text-4xl font-bold">{title}</h1>
+				<p className="text-lg sm:text-xl mt-2 sm:mt-4">{subtitle}</p>
+				<div className="flex flex-wrap gap-2 sm:gap-4 mt-4">
 					{buttons?.map((button, index) => (
-						<a key={index.toString()} href={button.link} className="btn bg-theme_red text-white px-4 py-2 rounded-md mt-8 hover:bg-theme_dark_red transition-all duration-300">
+						<a key={index.toString()} href={button.link} className="btn bg-theme_red text-white px-4 py-2 rounded-md mt-2 sm:mt-8 hover:bg-theme_dark_red transition-all duration-300">
 							{button.label}
 						</a>
 					))}

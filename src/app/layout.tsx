@@ -26,12 +26,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" className='min-h-screen w-full h-full'>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#252525]`}
+				className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#252525] min-h-screen w-full`}
 			>
 				<Navbar />
-				<div id="page-content" className="">
+				<div id="page-content" className="w-full">
 					{children}
 				</div>
 				<Footer />
