@@ -1,7 +1,6 @@
 'use client';
 
 import Header from '@/components/Header';
-import Image from 'next/image';
 import SectionWithImage from '@/components/SectionWithImage';
 
 export default function Home() {
