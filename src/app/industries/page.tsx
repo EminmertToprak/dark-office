@@ -1,15 +1,31 @@
 'use client';
 import Header from '@/components/Header';
 
+
 export default function Industries() {
+
+	
+
 	return (
-		<div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
-			<Header
-				title="Industries Test title"
-				subtitle="Industries Test subtitle"
-				backgroundImage="/images/industries_header.jpg"
+		<>
+		<Header
+				title="Innovating Manufacturing for Over 30 Years"
+				subtitle="Bringing cutting-edge technology to revolutionize factory operations."
+				backgroundVideo="/videos/about_bg_video.mp4"
+				buttons={[
+					{
+						label: 'Our Mission',
+						href: '#about-us',
+					},
+					{
+						label: 'Explore Our Journey',
+						href: '#our-journey',
+					},
+				]}
 			/>
-			<h1>This is Industries Page.</h1>
-		</div>
+		
+			
+		
+		</>
 	);
 }

@@ -6,6 +6,8 @@ import 'react-vertical-timeline-component/style.min.css';
 import { FaIndustry, FaLightbulb, FaChartLine, FaRobot, FaGlobeAmericas } from 'react-icons/fa';
 import SectionWithImage from '@/components/SectionWithImage';
 import Header from '@/components/Header';
+import { TechnologyCard } from '@/components/TechnologyCard';
+
 function AboutPage() {
 	const [visibleElements, setVisibleElements] = useState<number[]>([]);
 	const timelineRef = useRef<HTMLDivElement>(null);
@@ -46,6 +48,12 @@ function AboutPage() {
 		{ date: "2020", title: "Advanced Analytics", content: "Launched cutting-edge analytics platform for real-time insights.", icon: <FaChartLine />, color: "#f39c12" },
 		{ date: "2024", title: "Next-Gen Robotics", content: "Pioneered next-generation robotics solutions for smart factories.", icon: <FaRobot />, color: "#9b59b6" },
 	];
+
+	const leadershipTeam = [
+		{name: 'Salih Düzel', image: 'images/salih_duzel.jpeg', role:'CEO', bio:'Salih Düzel is a dynamic entrepreneur and seasoned project manager with a strong foundation in software development, ERP systems, and business process optimization. His career began in software project management, evolving over the years as he took on key roles in companies like Atiker Yazılım and Projesis Yazılım. In 2021, he founded Dark Office, a company specializing in data mining, AI, and automation solutions, where he has been leading innovative projects in robotics and smart technologies. With expertise in Industry 4.0 and a proven track record in ERP and team management, Salih is passionate about bridging technology and business for future-driven solutions. Based in Istanbul, he combines his technical skills with a keen eye for strategic development.'},
+		{name: 'Mert Toprak', image: 'images/mert_toprak.png', role:'Full-stack Developer', bio:'Mert Toprak is a passionate frontend developer with experience in JavaScript, TypeScript, and modern frameworks like React and Angular. With a strong foundation in both development and project management, he has contributed to various projects, including web applications and digital solutions for clients in diverse sectors. A quick learner and a collaborative team player, he thrives in agile environments and is committed to delivering high-quality user experiences. Mert is eager to expand his skill set while making a meaningful impact in the tech industry.'}
+
+	]
 
 	return (
 		<>
@@ -93,6 +101,42 @@ function AboutPage() {
 					))}
 				</VerticalTimeline>
 			</div>
+			<div id="our-technology" className="py-16">
+				<h2 className="text-3xl font-bold text-center mb-10">Our Technologies</h2>
+				<h1 className='text-xl text-center mb-10'>Advanced Solutions for Today’s Factories</h1>
+				<div id="industries-container" className="flex flex-wrap gap-6 justify-center py-8">
+				<TechnologyCard
+					title="ENS"
+					description="Enterprise Nervous System"
+					details="ENS integrates data across the factory for real-time decision-making."
+				/>
+				<TechnologyCard
+					title="MES+"
+					description="Manufacturing Execution System Plus"
+					details="MES+ enhances production with advanced analytics and automation."
+				/>
+				<TechnologyCard
+					title="MOM"
+					description="Manufacturing Operations Management"
+					details="Manage every operation from scheduling to quality control."
+				/>
+				{/* ... more cards can be added here ... */}
+			</div>
+			<div id='leadership-team' className='py-16 px-8 md:px-48 lg:px-96'>
+			<h2 className="text-3xl font-bold text-center mb-10">Meet the Team Behind Our Success</h2>
+				<div className="flex flex-wrap gap-6 justify-center py-8">
+					{leadershipTeam.map((member, index) => (
+						<div key={index} className="flex flex-col items-center justify-center p-4 rounded-lg shadow-lg">
+							<img src={member.image} alt={`Photo of ${member.name}`} className="w-28 h-28 rounded-full mb-4 border-2 border-theme_dark_red" />
+							<h3 className="text-xl font-semibold text-theme_red">{member.name}</h3>
+							<p className="text-md text-white-800">{member.role}</p>
+							<p className="text-md text-white mt-2">{member.bio}</p>
+						</div>
+					))}
+				</div>
+			</div>
+			</div>
+		
 		</>
 	);
 }
