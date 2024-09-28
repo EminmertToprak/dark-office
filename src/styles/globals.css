@@ -37,3 +37,11 @@ body {
 body {
   font-family: 'GeistMonoVF', 'GeistVF';
 }
+
+.vertical-timeline-element-content::before {
+  background: #424242;
+}
+
+.vertical-timeline-element-content {
+  padding: 0 !important;
+}

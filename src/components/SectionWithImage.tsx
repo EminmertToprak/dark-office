@@ -6,7 +6,7 @@ interface SectionWithImageProps {
 	description: string;
 	src: string;
 	imageAlt: string;
-	reverse?: boolean; // Optional prop to reverse the layout
+	reverse?: boolean;
 }
 
 const SectionWithImage: React.FC<SectionWithImageProps> = ({ title, description, src, imageAlt, reverse = false }) => {
@@ -17,7 +17,19 @@ const SectionWithImage: React.FC<SectionWithImageProps> = ({ title, description,
 				<p className='text-center sm:text-left text-gray-300'>{description}</p>
 			</div>
 			<div id='section-image' className='w-full max-w-2xl mx-auto h-full'>
-				<Image src={src || ''} alt={imageAlt || ''} width={500} height={500} className='w-full h-auto'/>
+				{src ? (
+					<Image
+						src={src}
+						alt={imageAlt}
+						width={500}
+						height={500}
+						className='w-full h-auto'
+					/>
+				) : (
+					<div className="w-full h-64 bg-gray-200 flex items-center justify-center">
+						<span className="text-gray-500">Image not available</span>
+					</div>
+				)}
 			</div>
 		</section>
 	);

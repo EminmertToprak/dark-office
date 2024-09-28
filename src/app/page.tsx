@@ -17,11 +17,11 @@ export default function Home() {
 				buttons={[
 					{
 						label: 'Learn More',
-						link: '/about',
+						href: '/about',
 					},
 					{
 						label: 'Request Demo',
-						link: '/contact',
+						href: '/contact',
 					},
 				]}
 			/>
