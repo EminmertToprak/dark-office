@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({
 						loop
 						muted
 						playsInline
-						className="object-cover w-full h-full"
+						className="object-cover w-full h-full brightness-50"
 					>
 						<source src={backgroundVideo} type="video/mp4" />
 						Your browser does not support the video tag.
