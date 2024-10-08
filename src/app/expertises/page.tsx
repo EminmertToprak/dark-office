@@ -16,13 +16,13 @@ const ExpertiseCard = ({
 
 	return (
 		<motion.div
-			className={`relative w-full h-64 rounded-lg shadow-md cursor-pointer transform transition-transform duration-500 ${
+			className={`relative w-full h-64 rounded-lg shadow-md cursor-pointer border backdrop-blur-md transform transition-transform duration-500 ${
 				flipped ? 'rotate-y-180' : ''
 			}`}
 			onHoverStart={() => setFlipped(true)}
 			onHoverEnd={() => setFlipped(false)}
 		>
-			<div className={`p-6 ${flipped ? '' : ''}`}>
+			<div className={`p-6 flex flex-col items-center justify-center h-full ${flipped ? '' : ''}`}>
 				<h3 className={`text-${flipped ? 'xl' : '2xl'} font-bold`}>{flipped ? 'More Info' : title}</h3>
 				<p>{flipped ? details : description}</p>
 			</div>
