@@ -11,17 +11,19 @@ interface HeaderProps {
 	buttons?: { label: string; href: string }[]; // Updated prop for buttons with href
 }
 
-const Header: React.FC<HeaderProps> = ({ 
-	title, 
-	subtitle, 
-	backgroundImage, 
-	backgroundVideo, 
+const Header: React.FC<HeaderProps> = ({
+	title,
+	subtitle,
+	backgroundImage,
+	backgroundVideo,
 	alt,
-	height = 'h-[50vh]',
-	buttons = []
+	height = 'h-[40vh]',
+	buttons = [],
 }) => {
 	return (
-		<header className={`relative ${height} flex items-center justify-center text-white`}>
+		<header
+			className={`relative ${height} flex items-center justify-center text-white`}
+		>
 			<div className="absolute inset-0 overflow-hidden">
 				{backgroundVideo ? (
 					<video
@@ -51,7 +53,11 @@ const Header: React.FC<HeaderProps> = ({
 				{subtitle && <p className="text-xl md:text-2xl mb-6">{subtitle}</p>}
 				<div className="flex justify-center space-x-4">
 					{buttons.map((button, index) => (
-						<Link key={index} href={button.href} className="bg-theme_red hover:bg-theme_dark_red text-white font-bold py-2 px-4 rounded">
+						<Link
+							key={index}
+							href={button.href}
+							className="bg-theme_red hover:bg-theme_dark_red text-white font-bold py-2 px-4 rounded"
+						>
 							{button.label}
 						</Link>
 					))}
