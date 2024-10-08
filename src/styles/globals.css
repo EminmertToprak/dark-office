@@ -45,3 +45,27 @@ body {
 .vertical-timeline-element-content {
   padding: 0 !important;
 }
+
+.slider {
+	height: auto;
+  width: 100%;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+  margin-top: 5rem;
+}
+
+.slide {
+  width: 100%;
+}
+
+.slide-track {
+	animation: scroll 30s linear infinite; /* Adjust duration as needed */
+	display: flex;
+	width: calc(250px * 12); /* Adjust based on the number of images */
+}
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 12)); } /* Adjust based on the number of images */
+}
