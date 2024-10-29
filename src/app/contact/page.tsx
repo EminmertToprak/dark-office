@@ -36,7 +36,6 @@ export default function ContactUs() {
 		backgroundVideo='/videos/contact_bg_video.mp4'
 	/>
 	  <section className="w-full sm:w-2/4 lg:w-1/4 mx-auto py-16 border border-white">
-		<h2 className="text-3xl font-bold text-center">Get in Touch</h2>
 		<form className="mx-auto mt-8 space-y-6 px-16 md:px-12 lg:px-8" onSubmit={handleSubmit}>
 		  <div>
 			<label className="block text-lg font-medium">Name</label>
