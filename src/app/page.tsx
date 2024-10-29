@@ -10,8 +10,8 @@ import Contact from "@/app/contact/page";
 export default function Home() {
 	const mainStyle = {
 		container:
-			'flex flex-col gap-8 min-h-screen font-[family-name:var(--font-geist-sans)]',
-		sectionWithImage: 'flex flex-col gap-8 px-8 py-16',
+			'flex flex-col gap-4 lg:gap-8 min-h-screen font-[family-name:var(--font-geist-sans)]',
+		sectionWithImage: 'flex flex-col gap-8 px-8 py-1 lg:py-1',
 	};
 	return (
 		<>

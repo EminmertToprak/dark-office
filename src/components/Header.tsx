@@ -51,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({
 				)}
 			</div>
 			<div className="relative z-10 text-center">
-				<h1 className="text-4xl md:text-6xl font-bold mb-4">{title}</h1>
+				<h1 className="text-4xl md:text-6xl font-bold mb-4 w-4/5 mx-auto">{title}</h1>
 				{subtitle && <p className="text-xl md:text-2xl mb-6">{subtitle}</p>}
 				<div className="flex justify-center space-x-4">
 					{buttons.map((button, index) => (

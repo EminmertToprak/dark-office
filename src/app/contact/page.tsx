@@ -35,9 +35,9 @@ export default function ContactUs() {
 		subtitle="We’re Here to Help You Achieve Manufacturing Excellence."
 		backgroundVideo='/videos/contact_bg_video.mp4'
 	/>
-	  <section className="py-16">
+	  <section className="w-full sm:w-2/4 lg:w-1/4 mx-auto py-16 border border-white">
 		<h2 className="text-3xl font-bold text-center">Get in Touch</h2>
-		<form className="max-w-md mx-auto mt-8 space-y-6" onSubmit={handleSubmit}>
+		<form className="mx-auto mt-8 space-y-6 px-16 md:px-12 lg:px-8" onSubmit={handleSubmit}>
 		  <div>
 			<label className="block text-lg font-medium">Name</label>
 			<input

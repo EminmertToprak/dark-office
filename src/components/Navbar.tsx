@@ -31,7 +31,7 @@ export default function Navbar() {
 					</p>
 				</a>
 				<button
-					className="block p-4 md:hidden text-white focus:outline-none"
+					className="block py-4 px-8 md:hidden text-white focus:outline-none"
 					onClick={() => setIsOpen(!isOpen)}
 				>
 					<svg
@@ -65,7 +65,7 @@ export default function Navbar() {
 					</div>
 					<li className="">
 						<a href="/" className="flex items-end rtl:space-x-reverse">
-							<h1 className="text-4xl font-bold text-red-700 lg:hidden">
+							<h1 className="text-4xl text-red-700 font-serif lg:hidden">
 								dark offic
 							</h1>
 							<Image

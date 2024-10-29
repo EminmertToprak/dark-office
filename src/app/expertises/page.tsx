@@ -38,7 +38,7 @@ export default function Expertises() {
 				subtitle="Innovative Solutions for Modern Manufacturing"
 				backgroundVideo="/videos/expertises_bg_video.mp4"
 			/>
-			<section className="py-16">
+			<section className="py-16 px-4 lg:px-8">
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 text-center">
 					<ExpertiseCard
 						title="Artificial Intelligence"

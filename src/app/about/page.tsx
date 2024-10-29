@@ -62,8 +62,8 @@ function AboutPage() {
 		{company: 'Lean Manufacturing', logo: 'images/standards/lean.png'},
 	]
 
-	const listStyle = "flex flex-col items-center gap-4 border-2 rounded-lg border-gray-300 pl-4 w-1/4 pt-4"
-	const listItemStyle = "pb-4 text-left list-disc list-inside"
+	const listStyle = "w-full md:w-1/3 p-2 border-2 border-theme_dark_red rounded-lg";
+	const listItemStyle = "list-disc pl-5 space-y-2";
 	return (
 		<>
 			<Header
@@ -100,7 +100,7 @@ function AboutPage() {
 			</section>
 			<div ref={timelineRef} id="our-journey" className="px-16">
 				<h2 className="text-3xl font-bold text-center mb-10">Our Journey</h2>
-				<VerticalTimeline className="border-4 border-white rounded-lg px-4">
+				<VerticalTimeline>
 					{timelineElements.map((element, index) => (
 
 						<VerticalTimelineElement
@@ -121,11 +121,12 @@ function AboutPage() {
 					))}
 				</VerticalTimeline>
 			</div>
+
 			<div id="our-technology" className="py-16">
 				<h2 className="text-4xl font-bold text-center mb-10">Our Technologies</h2>
 				<h1 className='text-3xl font-bold text-center mb-10'>Advanced Solutions for Today’s Factories</h1>
 				<h2 className='text-2xl text-center'>ENS MES +</h2>
-				<div className='flex flex-wrap gap-6 justify-center py-8'>
+				<div className='flex flex-col md:flex-row flex-wrap gap-6 justify-center py-8 px-4 md:px-6 lg:px-8'>
 					<div className={listStyle}>
 						<h3 className="text-xl font-semibold mb-4">Quality</h3>
 						<ul className={listItemStyle}>
@@ -181,30 +182,13 @@ function AboutPage() {
 						</ul>
 					</div>
 				</div>
-				<div id="industries-container" className="flex flex-wrap gap-6 justify-center py-8">
-					<TechnologyCard
-						title="ENS"
-						description="Enterprise Nervous System"
-						details="ENS integrates data across the factory for real-time decision-making."
-					/>
-					<TechnologyCard
-						title="MES+"
-						description="Manufacturing Execution System Plus"
-						details="MES+ enhances production with advanced analytics and automation."
-					/>
-					<TechnologyCard
-						title="MOM"
-						description="Manufacturing Operations Management"
-						details="Manage every operation from scheduling to quality control."
-					/>
-				</div>
-
 			</div>
 			<div id='leadership-team' className='py-10 px-8 md:px-24 lg:px-48'>
 				<h2 className="text-3xl font-bold text-center mb-6">Meet the Team Behind Our Success</h2>
-				<div className="flex flex-row gap-6 justify-center py-4 w-full">
+				<div className="flex flex-col md:flex-row lg:flex-row gap-6 justify-center py-4 w-full">
 					{leadershipTeam.map((member, index) => (
-						<div key={index} className="flex flex-col items-center rounded-lg shadow-lg w-1/2 border-2 border-theme_dark_red p-8">
+						<div key={index}
+							 className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center rounded-lg shadow-lg border-2 border-theme_dark_red p-8">
 							<img src={member.image} alt={`Photo of ${member.name}`}
 								 className="w-28 h-28 rounded-full mb-4 border-2 border-theme_dark_red"/>
 							<h3 className="text-xl font-semibold text-theme_red">{member.name}</h3>
@@ -228,7 +212,8 @@ function AboutPage() {
 					))}
 				</div>
 			</div>
-			<div id='call-to-action' className='py-10 px-8 md:px-24 lg:px-48 border-t-2 border-b-2 border-theme_dark_red'>
+			<div id='call-to-action'
+				 className='py-10 px-8 md:px-24 lg:px-48 border-t-2 border-b-2 border-theme_dark_red'>
 				<div className="text-center">
 					<h2 className="text-3xl font-bold mb-4">Join Us on the Path to Efficiency</h2>
 					<p className="text-lg mb-8">We’re committed to transforming industries and unlocking their full
