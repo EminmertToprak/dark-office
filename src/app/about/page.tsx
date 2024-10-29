@@ -98,17 +98,18 @@ function AboutPage() {
 				/>
 
 			</section>
-			<div ref={timelineRef} id="our-journey" className="py-16">
+			<div ref={timelineRef} id="our-journey" className="px-16">
 				<h2 className="text-3xl font-bold text-center mb-10">Our Journey</h2>
-				<VerticalTimeline>
+				<VerticalTimeline className="border-4 border-white rounded-lg px-4">
 					{timelineElements.map((element, index) => (
+
 						<VerticalTimelineElement
 							key={index}
 							className={`vertical-timeline-element--work ${visibleElements.includes(index) ? 'is-visible' : ''}`}
 							contentStyle={{background: element.color, color: "#fff"}}
 							contentArrowStyle={{borderRight: `7px solid ${element.color}`}}
 							date={element.date}
-							iconStyle={{background: element.color, color: "#fff"}}
+							iconStyle={{background: element.color, color: "#fff",}}
 							icon={element.icon}
 							visible={visibleElements.includes(index)}
 						>
@@ -116,6 +117,7 @@ function AboutPage() {
 							<h3 className="vertical-timeline-element-title pt-2 pl-2 font-bold">{element.title}</h3>
 							<p className="pl-4 pb-4">{element.content}</p>
 						</VerticalTimelineElement>
+
 					))}
 				</VerticalTimeline>
 			</div>

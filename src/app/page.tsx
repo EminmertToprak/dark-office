@@ -5,7 +5,6 @@ import SectionWithImage from '@/components/SectionWithImage';
 import AboutPage from "@/app/about/page";
 import Industries from "@/app/industries/page";
 import Expertises from "@/app/expertises/page"
-import News from "@/app/news/page";
 import Contact from "@/app/contact/page";
 
 export default function Home() {
