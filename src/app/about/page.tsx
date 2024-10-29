@@ -6,7 +6,6 @@ import 'react-vertical-timeline-component/style.min.css';
 import { FaIndustry, FaLightbulb, FaChartLine, FaRobot, FaGlobeAmericas } from 'react-icons/fa';
 import SectionWithImage from '@/components/SectionWithImage';
 import Header from '@/components/Header';
-import { TechnologyCard } from '@/components/TechnologyCard';
 
 function AboutPage() {
 	const [visibleElements, setVisibleElements] = useState<number[]>([]);
