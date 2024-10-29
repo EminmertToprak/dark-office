@@ -7,7 +7,6 @@ import { FaIndustry, FaLightbulb, FaChartLine, FaRobot, FaGlobeAmericas } from '
 import SectionWithImage from '@/components/SectionWithImage';
 import Header from '@/components/Header';
 import { TechnologyCard } from '@/components/TechnologyCard';
-import Link from 'next/link';
 
 function AboutPage() {
 	const [visibleElements, setVisibleElements] = useState<number[]>([]);
@@ -57,11 +56,14 @@ function AboutPage() {
 	]
 
 	const clientTestimonials = [
-		{company: 'ABC', logo: 'images/placeholder.png', quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-		{company: 'DEF', logo: 'images/placeholder.png', quote: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-		{company: 'GHI', logo: 'images/placeholder.png', quote: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'},
+		{company: 'ISO', logo: 'images/standards/iso.png'},
+		{company: 'Turquality', logo: 'images/standards/turquality.png'},
+		{company: 'BRC Food Certified', logo: 'images/standards/brc.jpg'},
+		{company: 'Lean Manufacturing', logo: 'images/standards/lean.png'},
 	]
 
+	const listStyle = "flex flex-col items-center gap-4 border-2 rounded-lg border-gray-300 pl-4 w-1/4 pt-4"
+	const listItemStyle = "pb-4 text-left list-disc list-inside"
 	return (
 		<>
 			<Header
@@ -80,13 +82,21 @@ function AboutPage() {
 				]}
 			/>
 			<section id="about-us" className="py-16">
-			<SectionWithImage
-				title="About Us"
-				description="We are a leading AI solutions provider for factories, dedicated to optimizing production processes and enhancing efficiency through cutting-edge technology."
-				src={"/images/mission.png"}
-				imageAlt="AI in factory setting"
-				reverse={false}
-			/>
+				<SectionWithImage
+					title="About Us"
+					description="With over 30 years of ERP experience, our founder and experienced team continue on our path as an R&D company dedicated to providing solutions for humanity, supported by our dealer network."
+					src={"/images/about_header.png"}
+					imageAlt="AI in factory setting"
+					reverse={false}
+				/>
+				<SectionWithImage
+					title="Our Mission"
+					description="Increasing efficiency and preventing waste through the effective use of artificial iztelligence recommendations, supported by digital neural networks, in every department involved in the production process and in every corner of the factory."
+					src={"/images/mission.png"}
+					imageAlt="AI in factory setting"
+					reverse={true}
+				/>
+
 			</section>
 			<div ref={timelineRef} id="our-journey" className="py-16">
 				<h2 className="text-3xl font-bold text-center mb-10">Our Journey</h2>
@@ -95,82 +105,140 @@ function AboutPage() {
 						<VerticalTimelineElement
 							key={index}
 							className={`vertical-timeline-element--work ${visibleElements.includes(index) ? 'is-visible' : ''}`}
-							contentStyle={{ background: element.color, color: "#fff" }}
-							contentArrowStyle={{ borderRight: `7px solid ${element.color}` }}
+							contentStyle={{background: element.color, color: "#fff"}}
+							contentArrowStyle={{borderRight: `7px solid ${element.color}`}}
 							date={element.date}
-							iconStyle={{ background: element.color, color: "#fff" }}
+							iconStyle={{background: element.color, color: "#fff"}}
 							icon={element.icon}
 							visible={visibleElements.includes(index)}
 						>
-							<h3 className="vertical-timeline-element-title">{element.title}</h3>
-							<p>{element.content}</p>
+
+							<h3 className="vertical-timeline-element-title pt-2 pl-2 font-bold">{element.title}</h3>
+							<p className="pl-4 pb-4">{element.content}</p>
 						</VerticalTimelineElement>
 					))}
 				</VerticalTimeline>
 			</div>
 			<div id="our-technology" className="py-16">
-				<h2 className="text-3xl font-bold text-center mb-10">Our Technologies</h2>
-				<h1 className='text-xl text-center mb-10'>Advanced Solutions for Today’s Factories</h1>
+				<h2 className="text-4xl font-bold text-center mb-10">Our Technologies</h2>
+				<h1 className='text-3xl font-bold text-center mb-10'>Advanced Solutions for Today’s Factories</h1>
+				<h2 className='text-2xl text-center'>ENS MES +</h2>
+				<div className='flex flex-wrap gap-6 justify-center py-8'>
+					<div className={listStyle}>
+						<h3 className="text-xl font-semibold mb-4">Quality</h3>
+						<ul className={listItemStyle}>
+							<li>Referencing technical drawings in numerical controls</li>
+							<li>Displaying the correct image in visual inspections</li>
+							<li>Sample Plan Support</li>
+							<li>Advanced/Backward Traceability</li>
+							<li>Push Notification Support in Field Controls</li>
+						</ul>
+					</div>
+					<div className={listStyle}>
+						<h3 className="text-xl font-semibold mb-4">Planning</h3>
+						<ul className={listItemStyle}>
+							<li>The ability to link multiple recipes and routes to a product</li>
+							<li>Capacity Planning with MRP1 / MRP2 / VR</li>
+							<li>Real-time communication with workshops</li>
+						</ul>
+					</div>
+					<div className={listStyle}>
+						<h3 className="text-xl font-semibold mb-4">Production</h3>
+						<ul className={listItemStyle}>
+							<li>The ability to produce without recipes</li>
+							<li>Practical and Easy Use with Barcode Support</li>
+							<li>If desired, the ability to link multiple recipes and routes to a product</li>
+							<li>Real-time Cost Information</li>
+							<li>Mobile APK support</li>
+						</ul>
+					</div>
+					<div className={listStyle}>
+						<h3 className="text-xl font-semibold mb-4">Purchase</h3>
+						<ul className={listItemStyle}>
+							<li>Transparent Procurement Support</li>
+							<li>Automatically obtaining and evaluating vendor quotes</li>
+							<li>E-Invoice Support</li>
+						</ul>
+					</div>
+					<div className={listStyle}>
+						<h3 className="text-xl font-semibold mb-4">Sale</h3>
+						<ul className={listItemStyle}>
+							<li>Establishing communication between production and sales</li>
+							<li>Production Order Tracking</li>
+							<li>Shipment Planning</li>
+							<li>V-sight Connection</li>
+						</ul>
+					</div>
+					<div className={listStyle}>
+						<h3 className="text-xl font-semibold mb-4">Maintenance</h3>
+						<ul className={listItemStyle}>
+							<li>Planned/Unplanned Maintenance Tracking.</li>
+							<li>Tracking of Fault Response Times.</li>
+							<li>Tracking of Materials Used.</li>
+							<li>VShelf Life Tracking - Sales</li>
+						</ul>
+					</div>
+				</div>
 				<div id="industries-container" className="flex flex-wrap gap-6 justify-center py-8">
-				<TechnologyCard
-					title="ENS"
-					description="Enterprise Nervous System"
-					details="ENS integrates data across the factory for real-time decision-making."
-				/>
-				<TechnologyCard
-					title="MES+"
-					description="Manufacturing Execution System Plus"
-					details="MES+ enhances production with advanced analytics and automation."
-				/>
-				<TechnologyCard
-					title="MOM"
-					description="Manufacturing Operations Management"
-					details="Manage every operation from scheduling to quality control."
-				/>
-				{/* ... more cards can be added here ... */}
+					<TechnologyCard
+						title="ENS"
+						description="Enterprise Nervous System"
+						details="ENS integrates data across the factory for real-time decision-making."
+					/>
+					<TechnologyCard
+						title="MES+"
+						description="Manufacturing Execution System Plus"
+						details="MES+ enhances production with advanced analytics and automation."
+					/>
+					<TechnologyCard
+						title="MOM"
+						description="Manufacturing Operations Management"
+						details="Manage every operation from scheduling to quality control."
+					/>
+				</div>
+
 			</div>
-			<div id='leadership-team' className='py-16 px-8 md:px-48 lg:px-96'>
-			<h2 className="text-3xl font-bold text-center mb-10">Meet the Team Behind Our Success</h2>
-				<div className="flex flex-wrap gap-6 justify-center py-8">
+			<div id='leadership-team' className='py-10 px-8 md:px-24 lg:px-48'>
+				<h2 className="text-3xl font-bold text-center mb-6">Meet the Team Behind Our Success</h2>
+				<div className="flex flex-row gap-6 justify-center py-4 w-full">
 					{leadershipTeam.map((member, index) => (
-						<div key={index} className="flex flex-col items-center justify-center p-4 rounded-lg shadow-lg">
-							<img src={member.image} alt={`Photo of ${member.name}`} className="w-28 h-28 rounded-full mb-4 border-2 border-theme_dark_red" />
+						<div key={index} className="flex flex-col items-center rounded-lg shadow-lg w-1/2 border-2 border-theme_dark_red p-8">
+							<img src={member.image} alt={`Photo of ${member.name}`}
+								 className="w-28 h-28 rounded-full mb-4 border-2 border-theme_dark_red"/>
 							<h3 className="text-xl font-semibold text-theme_red">{member.name}</h3>
 							<p className="text-md text-white-800">{member.role}</p>
-							<p className="text-md text-white mt-2">{member.bio}</p>
+							<p className="text-md text-white mt-2 text-center">{member.bio}</p>
 						</div>
 					))}
 				</div>
 			</div>
-			</div>
-		<div id="client-testimonials" className="py-16">
-			<h2 className="text-3xl font-bold text-center mb-10">What Our Clients Say</h2>
-			<div className="flex flex-wrap gap-6 justify-center py-8">
-				{clientTestimonials.map((testimonial, index) => (
-					<div key={index} className="flex flex-col items-center justify-center p-4 rounded-lg shadow-lg relative group">
-						<img src={testimonial.logo} alt={`Logo of ${testimonial.company}`} className="w-28 h-28 rounded-full mb-4 border-2 border-theme_dark_red" />
-						<p>{testimonial.company}</p>
-						<div className="absolute top-0 left-0 h-full w-full text-center bg-gray-900 bg-opacity-100 text-white rounded-lg z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-							<p className="text-sm text-center text-white p-4 text-left text-wrap">{testimonial.quote}</p>
+			<div id="document-standards" className="py-4">
+				<h2 className="text-3xl font-bold text-center mb-10">Ready Document Standards</h2>
+				<h3 className="text-xl text-center">Directly supported document and production standards:</h3>
+				<div className="flex flex-wrap gap-6 justify-center py-8">
+					{clientTestimonials.map((testimonial, index) => (
+						<div key={index}
+							 className="flex flex-col items-center justify-center p-4 rounded-lg shadow-lg relative group">
+							<img src={testimonial.logo} alt={`Logo of ${testimonial.company}`}
+								 className="w-28 h-28 rounded-full mb-4 border-2 border-theme_dark_red"/>
+							<p>{testimonial.company}</p>
 						</div>
+					))}
+				</div>
+			</div>
+			<div id='call-to-action' className='py-10 px-8 md:px-24 lg:px-48 border-t-2 border-b-2 border-theme_dark_red'>
+				<div className="text-center">
+					<h2 className="text-3xl font-bold mb-4">Join Us on the Path to Efficiency</h2>
+					<p className="text-lg mb-8">We’re committed to transforming industries and unlocking their full
+						potential. Ready to elevate your factory’s performance?</p>
+					<div className="flex justify-center gap-4">
+						<a href="#contact"
+						   className="bg-theme_dark_red text-white py-2 px-4 rounded hover:bg-theme_red transition duration-300">
+							Contact Us
+						</a>
 					</div>
-				))}
+				</div>
 			</div>
-		</div>
-		<div id='call-to-action' className='py-16'>
-		<div className="text-center">
-			<h2 className="text-3xl font-bold mb-4">Join Us on the Path to Efficiency</h2>
-			<p className="text-lg mb-8">We’re committed to transforming industries and unlocking their full potential. Ready to elevate your factory’s performance?</p>
-			<div className="flex justify-center gap-4">
-				<Link href="/contact" className="bg-theme_dark_red text-white py-2 px-4 rounded hover:bg-theme_red transition duration-300">
-					Contact Us
-				</Link>
-				<Link href="/request-demo" className="bg-theme_dark_red text-white py-2 px-4 rounded hover:bg-theme_red transition duration-300">
-					Request a Demo
-				</Link>
-			</div>
-		</div>
-		</div>
 		</>
 	);
 }

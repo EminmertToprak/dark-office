@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import React from "react";
 
 interface HeaderProps {
 	title: string;
@@ -7,35 +8,36 @@ interface HeaderProps {
 	backgroundImage?: string;
 	backgroundVideo?: string;
 	alt?: string;
-	height?: string; // New prop for custom height
-	buttons?: { label: string; href: string }[]; // Updated prop for buttons with href
+	height?: string;
+	buttons?: { label: string; href: string }[];
 }
 
 const Header: React.FC<HeaderProps> = ({
-	title,
-	subtitle,
-	backgroundImage,
-	backgroundVideo,
-	alt,
-	height = 'h-[40vh]',
-	buttons = [],
-}) => {
+										   title,
+										   subtitle,
+										   backgroundImage,
+										   backgroundVideo,
+										   alt,
+										   height = 'h-[60vh]',
+										   buttons = [],
+									   }) => {
 	return (
-		<header
-			className={`relative ${height} flex items-center justify-center text-white`}
-		>
+		<header className={`relative ${height} flex items-center justify-center text-white mt-10`}>
 			<div className="absolute inset-0 overflow-hidden">
 				{backgroundVideo ? (
-					<video
-						autoPlay
-						loop
-						muted
-						playsInline
-						className="object-cover w-full h-full brightness-50"
-					>
-						<source src={backgroundVideo} type="video/mp4" />
-						Your browser does not support the video tag.
-					</video>
+					<>
+						<video
+							autoPlay
+							loop
+							muted
+							playsInline
+							className="object-cover w-full h-full inset-0"
+						>
+							<source src={backgroundVideo} type="video/mp4"/>
+							Your browser does not support the video tag.
+						</video>
+						<div className="absolute inset-0 bg-opacity-gradient"/>
+					</>
 				) : backgroundImage ? (
 					<Image
 						src={backgroundImage}
@@ -45,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({
 						fill
 					/>
 				) : (
-					<div className="w-full h-full bg-gray-800" />
+					<div className="w-full h-full bg-gray-800"/>
 				)}
 			</div>
 			<div className="relative z-10 text-center">
@@ -64,6 +66,7 @@ const Header: React.FC<HeaderProps> = ({
 				</div>
 			</div>
 		</header>
+
 	);
 };
 

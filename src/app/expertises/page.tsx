@@ -39,8 +39,7 @@ export default function Expertises() {
 				backgroundVideo="/videos/expertises_bg_video.mp4"
 			/>
 			<section className="py-16">
-				<h2 className="text-3xl font-bold text-center">Our Expertise</h2>
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 text-center">
 					<ExpertiseCard
 						title="Artificial Intelligence"
 						description="AI-driven solutions for predictive maintenance."

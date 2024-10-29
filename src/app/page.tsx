@@ -2,13 +2,20 @@
 
 import Header from '@/components/Header';
 import SectionWithImage from '@/components/SectionWithImage';
+import AboutPage from "@/app/about/page";
+import Industries from "@/app/industries/page";
+import Expertises from "@/app/expertises/page"
+import News from "@/app/news/page";
+import Contact from "@/app/contact/page";
 
 export default function Home() {
 	const mainStyle = {
-		container: 'flex flex-col gap-8 min-h-screen font-[family-name:var(--font-geist-sans)]',
-		sectionWithImage: 'flex flex-col gap-8 px-8 py-16 ',
+		container:
+			'flex flex-col gap-8 min-h-screen font-[family-name:var(--font-geist-sans)]',
+		sectionWithImage: 'flex flex-col gap-8 px-8 py-16',
 	};
 	return (
+		<>
 		<div className={mainStyle.container}>
 			<Header
 				title="Transform Your Factory’s Future Today"
@@ -54,5 +61,23 @@ export default function Home() {
 				/>
 			</main>
 		</div>
+		<div className="flex flex-col gap-8 min-h-screen font-[family-name:var(--font-geist-sans)]">
+			<div id="about">
+				<AboutPage />
+			</div>
+			<div id="industries">
+				<Industries />
+			</div>
+			<div id="expertises">
+				<Expertises />
+			</div>
+			{/*<div id="news">
+			<News />
+			</div>*/}
+			<div  id="contact">
+			<Contact />
+		</div>
+		</div>
+		</>
 	);
 }

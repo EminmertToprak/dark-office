@@ -16,14 +16,14 @@ const SectionWithImage: React.FC<SectionWithImageProps> = ({ title, description,
 				<h1 className='text-2xl font-bold text-center sm:text-left'>{title}</h1>
 				<p className='text-center sm:text-left text-gray-300'>{description}</p>
 			</div>
-			<div id='section-image' className='w-full max-w-2xl mx-auto h-full'>
+			<div id='section-image' className='max-w-2xl mx-auto h-[300px] w-[500px]'> {/* Set a fixed height here */}
 				{src ? (
 					<Image
 						src={src}
 						alt={imageAlt}
 						width={500}
-						height={500}
-						className='w-full h-auto'
+						height={200} // Height can still be set here, but we control it in the parent
+						className='w-full h-full object-cover rounded-lg shadow-lg' // Use h-full to match the container's height
 					/>
 				) : (
 					<div className="w-full h-64 bg-gray-200 flex items-center justify-center">
@@ -36,4 +36,3 @@ const SectionWithImage: React.FC<SectionWithImageProps> = ({ title, description,
 };
 
 export default SectionWithImage;
-

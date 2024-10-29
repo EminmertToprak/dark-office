@@ -15,15 +15,20 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav id="navbar" className="h-16 relative z-20">
+		<nav id="navbar" className="h-16 bg-[#0d1117] fixed w-full z-20">
 			<div className="w-full h-full flex flex-wrap items-center justify-between">
-				<a href="/" className="flex items-end rtl:space-x-reverse mx-4">
-					<h1 className="text-4xl font-bold text-theme_dark_red">dark offic</h1>
+				<a href="/" className="flex flex-col items-center rtl:space-x-reverse mx-4">
+					<div className="flex flex-row items-end mx-4">
+					<h1 className="text-3xl text-red-700 font-serif">dark offic</h1>
 					<Image
 						src={logo || ''}
 						className="h-5 w-auto mb-1.5"
 						alt="Dark Office Logo"
 					/>
+					</div>
+					<p className="text-center text-gray-400 font-serif">
+						MES - MOM - IoT - AI - RPA
+					</p>
 				</a>
 				<button
 					className="block p-4 md:hidden text-white focus:outline-none"
@@ -60,7 +65,7 @@ export default function Navbar() {
 					</div>
 					<li className="">
 						<a href="/" className="flex items-end rtl:space-x-reverse">
-							<h1 className="text-4xl font-bold text-theme_dark_red lg:hidden">
+							<h1 className="text-4xl font-bold text-red-700 lg:hidden">
 								dark offic
 							</h1>
 							<Image
@@ -77,29 +82,29 @@ export default function Navbar() {
 					</li>
 					<li className={buttonstyle}>
 						<button onClick={handleLinkClick} className="h-16 text-center">
-							<Link href="/about" className="">
+							<a href="#about" className="">
 								About
-							</Link>
+							</a>
 						</button>
 					</li>
 					<li className={buttonstyle}>
 						<button onClick={handleLinkClick} className="h-16 text-center">
-							<Link href="/industries">Industries</Link>
+							<a href="#industries">Industries</a>
 						</button>
 					</li>
 					<li className={buttonstyle}>
 						<button onClick={handleLinkClick} className="h-16 text-center">
-							<Link href="/expertises">Expertises</Link>
+							<a href="#expertises">Expertises</a>
 						</button>
 					</li>
+					{/*<li className={buttonstyle}>*/}
+					{/*	<button onClick={handleLinkClick} className="h-16 text-center">*/}
+					{/*		<a href="#news">News & Events</a>*/}
+					{/*	</button>*/}
+					{/*</li>*/}
 					<li className={buttonstyle}>
 						<button onClick={handleLinkClick} className="h-16 text-center">
-							<Link href="/news">News & Events</Link>
-						</button>
-					</li>
-					<li className={buttonstyle}>
-						<button onClick={handleLinkClick} className="h-16 text-center">
-							<Link href="/contact">Contact Us</Link>
+							<a href="#contact">Contact Us</a>
 						</button>
 					</li>
 				</ul>
